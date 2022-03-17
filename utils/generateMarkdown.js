@@ -16,5 +16,15 @@ function renderLicenseBadge(selectedLicense) {
 
 
 function renderLicenseLink(selectedLicense) {
-    
+    if (selectedLicense === 'Mozilla License 2.0') {
+        return `[This application is licensed under Mozilla](https://opensource.org/licenses/MPL-2.0)`;
+    } else if (selectedLicense === 'Apache License 2.0') {
+        return `[This application is licensed under Apache]((https://opensource.org/licenses/Apache-2.0))`;
+    } else if (selectedLicense === 'MIT License') {
+        return `[This application is licensed under MIT](https://opensource.org/licenses/MIT)`;
+    } else if (selectedLicense === 'Boost Software License 1.0') {
+        return `[This application is licensed under Boost](https://www.boost.org/LICENSE_1_0.txt)`
+    } else {
+        return '';
+    }
 }
