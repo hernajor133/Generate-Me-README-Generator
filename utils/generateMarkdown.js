@@ -28,3 +28,21 @@ function renderLicenseLink(selectedLicense) {
         return '';
     }
 }
+
+function renderLicenseSection(selectedLicense) {
+    if (selectedLicense == 'none') {
+        return '';
+    } else {
+        return '## License';
+    }
+}
+
+
+function generateMarkdown(selectedLicense) {
+    return `${renderLicenseSection(selectedLicense)}
+    ${renderLicenseBadge(selectedLicense)}
+    ${renderLicenseLink(selectedLicense)}`;
+}
+
+
+module.exports = generateMarkdown;
