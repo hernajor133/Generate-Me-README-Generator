@@ -3,7 +3,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require('./utils/generateMarkdown');
 
-
 const questions = [
     {
         type: 'input',
@@ -69,20 +68,16 @@ const questions = [
         type: 'input',
         message: "What is your GitHub username?",
         name: 'GitHub',
-        default: 'Project GitHub',
+        default: 'hernajor133',
     },
 
     {
         type: 'input',
         message: "Enter email address.",
         name: 'email',
-        default: 'email@example.com',
+        default: 'jordihernandez133@gmail.com',
     },
-
-    
 ];
-
-
 
 function writeReadMe() {
     inquirer
@@ -91,6 +86,7 @@ function writeReadMe() {
             console.log(responses);
             const myMarkdown = markdown(responses.license);
             fs.writeFile('newREADME.md', `# ${responses.title}
+
 ## Description
 ${responses.description}
 ## Table of Contents
@@ -116,11 +112,8 @@ ${responses.email}
 ${myMarkdown}`, function(err) {
     if (err) throw err;
     console.log('README Created!');
-
 })
 })
 };
 
 writeReadMe();
-
-

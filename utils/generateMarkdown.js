@@ -13,8 +13,6 @@ function renderLicenseBadge(selectedLicense) {
     }
 }
 
-
-
 function renderLicenseLink(selectedLicense) {
     if (selectedLicense === 'Mozilla License 2.0') {
         return `[This application is licensed under Mozilla](https://opensource.org/licenses/MPL-2.0)`;
@@ -37,12 +35,10 @@ function renderLicenseSection(selectedLicense) {
     }
 }
 
-
 function generateMarkdown(selectedLicense) {
     return `${renderLicenseSection(selectedLicense)}
     ${renderLicenseBadge(selectedLicense)}
     ${renderLicenseLink(selectedLicense)}`;
 }
-
 
 module.exports = generateMarkdown;
