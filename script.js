@@ -56,7 +56,7 @@ const questions = [
     {
         type: 'input',
         message: "Describe any contributors, or how any user can contribute to this project.",
-        name: 'contributing'
+        name: 'contributions'
     },
 
     {
@@ -96,7 +96,7 @@ ${responses.description}
 ## Table of Contents
 1. [Installation](#installation) 
 2. [Usage](#usage)
-3. [Contributing](#contributing)
+3. [Contributions](#contributions)
 4. [Tests](#tests)
 5. [Questions](#questions)
 
@@ -104,8 +104,8 @@ ${responses.description}
 ${responses.installation}
 ## Usage 
 ${responses.usage}
-## Contributing 
-${responses.contributing}
+## Contributions 
+${responses.contributiions}
 ## Tests 
 ${responses.tests}
 ## Questions
