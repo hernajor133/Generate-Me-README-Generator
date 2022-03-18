@@ -83,3 +83,44 @@ const questions = [
 ];
 
 
+
+function writeReadMe() {
+    inquirer
+        .prompt(questions)
+        .then((responses) => {
+            console.log(responses);
+            const myMarkdown = markdown(responses.license);
+            fs.writeFile('newREADME.md', `# ${responses.title}
+## Description
+${responses.description}
+## Table of Contents
+1. [Installation](#installation) 
+2. [Usage](#usage)
+3. [Contributing](#contributing)
+4. [Tests](#tests)
+5. [Questions](#questions)
+
+## Installation 
+${responses.installation}
+## Usage 
+${responses.usage}
+## Contributing 
+${responses.contributing}
+## Tests 
+${responses.tests}
+## Questions
+### GitHub
+[GitHub](https://www.github.com/${responses.github}) 
+### Email
+${responses.email}
+${myMarkdown}`, function(err) {
+    if (err) throw err;
+    console.log('README Created!');
+
+})
+})
+};
+
+writeReadMe();
+
+
